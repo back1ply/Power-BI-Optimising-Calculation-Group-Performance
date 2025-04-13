@@ -1,0 +1,18 @@
+table 'Relationships Table'
+	lineageTag: 798d8035-fa20-4af6-9081-3423dedda334
+
+	column Relationship
+		lineageTag: 6e52cd8d-3dd6-40dd-a274-ca49a260216e
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	partition 'Relationships Table-6dc6661d-4d2b-40ba-a2c5-5082be8ffaa5' = calculated
+		mode: import
+		source = {"By Order Date", "By Delivery Date", "By Due Date"}
+
+	annotation PBI_Id = bab8c12373a04b6680211b68648da91e
+

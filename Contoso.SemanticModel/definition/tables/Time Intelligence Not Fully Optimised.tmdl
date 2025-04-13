@@ -1,0 +1,219 @@
+table 'Time Intelligence Not Fully Optimised'
+	lineageTag: 9389f7b1-d37a-47d7-a742-6b7bf5eefa06
+
+	calculationGroup
+		precedence: 21
+
+		calculationItem 'Time Intelligence Not Fully Optimised' =
+				VAR SelectedTimeIntelligence =
+				    SELECTEDVALUE(
+				        'Time Intelligence Table'[Time Intelligence Column]
+				    )
+				VAR PM =
+				    IF(
+				        [ShowValueForDates],
+				        CALCULATE(
+				            SELECTEDMEASURE( ),
+				            DATEADD( 'Date'[Date], -1, MONTH ),
+				            'Date'[DateWithSales] = TRUE
+				        )
+				    )
+				VAR MOM =
+				    VAR ValueCurrentPeriod = SELECTEDMEASURE( )
+				    VAR ValuePreviousPeriod =
+				        IF(
+				            [ShowValueForDates],
+				            CALCULATE(
+				                SELECTEDMEASURE( ),
+				                DATEADD( 'Date'[Date], -1, MONTH ),
+				                'Date'[DateWithSales] = TRUE
+				            )
+				        )
+				    VAR Result =
+				        IF(
+				            NOT ISBLANK( ValueCurrentPeriod )
+				                && NOT ISBLANK( ValuePreviousPeriod ),
+				            ValueCurrentPeriod - ValuePreviousPeriod
+				        )
+				    RETURN
+				        Result
+				VAR MOMPct =
+				    DIVIDE(
+				        VAR ValueCurrentPeriod = SELECTEDMEASURE( )
+				        VAR ValuePreviousPeriod =
+				            IF(
+				                [ShowValueForDates],
+				                CALCULATE(
+				                    SELECTEDMEASURE( ),
+				                    DATEADD( 'Date'[Date], -1, MONTH ),
+				                    'Date'[DateWithSales] = TRUE
+				                )
+				            )
+				        VAR Result =
+				            IF(
+				                NOT ISBLANK( ValueCurrentPeriod )
+				                    && NOT ISBLANK( ValuePreviousPeriod ),
+				                ValueCurrentPeriod - ValuePreviousPeriod
+				            )
+				        RETURN
+				            Result,
+				        IF(
+				            [ShowValueForDates],
+				            CALCULATE(
+				                SELECTEDMEASURE( ),
+				                DATEADD( 'Date'[Date], -1, MONTH ),
+				                'Date'[DateWithSales] = TRUE
+				            )
+				        )
+				    )
+				VAR PQ =
+				    IF(
+				        [ShowValueForDates],
+				        CALCULATE(
+				            SELECTEDMEASURE( ),
+				            DATEADD( 'Date'[Date], -1, QUARTER ),
+				            'Date'[DateWithSales] = TRUE
+				        )
+				    )
+				VAR QOQ =
+				    VAR ValueCurrentPeriod = SELECTEDMEASURE( )
+				    VAR ValuePreviousPeriod =
+				        IF(
+				            [ShowValueForDates],
+				            CALCULATE(
+				                SELECTEDMEASURE( ),
+				                DATEADD( 'Date'[Date], -1, QUARTER ),
+				                'Date'[DateWithSales] = TRUE
+				            )
+				        )
+				    VAR Result =
+				        IF(
+				            NOT ISBLANK( ValueCurrentPeriod )
+				                && NOT ISBLANK( ValuePreviousPeriod ),
+				            ValueCurrentPeriod - ValuePreviousPeriod
+				        )
+				    RETURN
+				        Result
+				VAR QOQPct =
+				    DIVIDE(
+				        VAR ValueCurrentPeriod = SELECTEDMEASURE( )
+				        VAR ValuePreviousPeriod =
+				            IF(
+				                [ShowValueForDates],
+				                CALCULATE(
+				                    SELECTEDMEASURE( ),
+				                    DATEADD( 'Date'[Date], -1, QUARTER ),
+				                    'Date'[DateWithSales] = TRUE
+				                )
+				            )
+				        VAR Result =
+				            IF(
+				                NOT ISBLANK( ValueCurrentPeriod )
+				                    && NOT ISBLANK( ValuePreviousPeriod ),
+				                ValueCurrentPeriod - ValuePreviousPeriod
+				            )
+				        RETURN
+				            Result,
+				        IF(
+				            [ShowValueForDates],
+				            CALCULATE(
+				                SELECTEDMEASURE( ),
+				                DATEADD( 'Date'[Date], -1, QUARTER ),
+				                'Date'[DateWithSales] = TRUE
+				            )
+				        )
+				    )
+				VAR PY =
+				    IF(
+				        [ShowValueForDates],
+				        CALCULATE(
+				            SELECTEDMEASURE( ),
+				            DATEADD( 'Date'[Date], -1, YEAR ),
+				            'Date'[DateWithSales] = TRUE
+				        )
+				    )
+				VAR YOY =
+				    VAR ValueCurrentPeriod = SELECTEDMEASURE( )
+				    VAR ValuePreviousPeriod =
+				        IF(
+				            [ShowValueForDates],
+				            CALCULATE(
+				                SELECTEDMEASURE( ),
+				                DATEADD( 'Date'[Date], -1, YEAR ),
+				                'Date'[DateWithSales] = TRUE
+				            )
+				        )
+				    VAR Result =
+				        IF(
+				            NOT ISBLANK( ValueCurrentPeriod )
+				                && NOT ISBLANK( ValuePreviousPeriod ),
+				            ValueCurrentPeriod - ValuePreviousPeriod
+				        )
+				    RETURN
+				        Result
+				VAR YOYPct =
+				    DIVIDE(
+				        VAR ValueCurrentPeriod = SELECTEDMEASURE( )
+				        VAR ValuePreviousPeriod =
+				            IF(
+				                [ShowValueForDates],
+				                CALCULATE(
+				                    SELECTEDMEASURE( ),
+				                    DATEADD( 'Date'[Date], -1, YEAR ),
+				                    'Date'[DateWithSales] = TRUE
+				                )
+				            )
+				        VAR Result =
+				            IF(
+				                NOT ISBLANK( ValueCurrentPeriod )
+				                    && NOT ISBLANK( ValuePreviousPeriod ),
+				                ValueCurrentPeriod - ValuePreviousPeriod
+				            )
+				        RETURN
+				            Result,
+				        IF(
+				            [ShowValueForDates],
+				            CALCULATE(
+				                SELECTEDMEASURE( ),
+				                DATEADD( 'Date'[Date], -1, YEAR ),
+				                'Date'[DateWithSales] = TRUE
+				            )
+				        )
+				    )
+				VAR Result =
+				    SWITCH(
+				        SelectedTimeIntelligence,
+				        "PM", PM,
+				        "MOM", MOM,
+				        "MOM%", MOMPct,
+				        "PQ", PQ,
+				        "QOQ", QOQ,
+				        "QOQ%", QOQPct,
+				        "PY", PY,
+				        "YOY", YOY,
+				        "YOY%", YOYPct,
+				        SELECTEDMEASURE( )
+				    )
+				RETURN
+				    Result
+
+			formatStringDefinition = IF ( SELECTEDVALUE ( 'Time Intelligence Table'[Time Intelligence Column] ) IN { "MOM%" , "QOQ%" , "YOY%" } , "0.0%;-0.0%;0.0%" , SELECTEDMEASUREFORMATSTRING ( ) )
+
+	column Name
+		dataType: string
+		lineageTag: 6f9ca64e-bdc1-484c-b450-eebbaf4e1ab0
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordinal
+		dataType: int64
+		isHidden
+		lineageTag: 44f01a94-66bf-4df0-9b28-ef86079795fd
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+

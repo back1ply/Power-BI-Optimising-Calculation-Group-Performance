@@ -1,0 +1,75 @@
+table 'Product Subcategory'
+	lineageTag: 4ff69341-d14e-4eef-b729-ea14503c8c03
+
+	column ProductSubcategoryKey
+		dataType: int64
+		isNullable: false
+		lineageTag: dd36d7a8-eb9a-47da-88fc-32f88022d60e
+		summarizeBy: none
+		sourceColumn: ProductSubcategoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Subcategory Code'
+		dataType: string
+		lineageTag: 5963525d-6979-4627-9c72-44b4962f3452
+		summarizeBy: none
+		sourceColumn: Subcategory Code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Subcategory
+		dataType: string
+		lineageTag: fbb69994-8d3f-4540-908c-b256c5420ec8
+		summarizeBy: none
+		sourceColumn: Subcategory
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column ProductCategoryKey
+		dataType: int64
+		lineageTag: c173d031-7821-42b4-9b9e-77b6acc66d28
+		summarizeBy: none
+		sourceColumn: ProductCategoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'DaxBook Product Subcategory' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("Demo", "ContosoRetailDW"),
+				    #"DaxBook_Product Subcategory" = Source{[Schema="DaxBook",Item="Product Subcategory"]}[Data]
+				in
+				    #"DaxBook_Product Subcategory"
+
+		annotation IsQueryEditorUsed = False
+
+		annotation QueryEditorSerialization
+
+		annotation TableWidgetSerialization
+
+	annotation _TM_ExtProp_QueryDefinition = SELECT * FROM [Product Subcategory]
+
+	annotation _TM_ExtProp_DbTableName = 755
+
+	annotation IsQueryEditorUsed = False
+
+	annotation QueryEditorSerialization
+
+	annotation TableWidgetSerialization
+
+	annotation DataMarketWebBaseUrl
+
+	annotation DataMarketWebQueryUrl
+
+	annotation PBI_ResultType = Table
+

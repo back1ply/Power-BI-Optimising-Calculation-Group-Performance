@@ -1,0 +1,49 @@
+table 'Time Intelligence Table'
+	lineageTag: 36305e05-d7da-4ba1-ada6-fc8125fe65b1
+
+	column 'Time Intelligence Column'
+		lineageTag: 07a58af3-2763-4f81-8275-4e56a4eb8809
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Time Intelligence Column]
+		sortByColumn: Sort
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Sort
+		formatString: 0
+		lineageTag: 8175449f-286d-4503-b241-c62dd2e6d856
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Sort]
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Time Intelligence Table-62f166f2-9275-4101-bf57-55a5edc9e97f' = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "Time Intelligence Column", STRING,
+				    "Sort", INTEGER,
+				    {
+				        { "PM", 1 },
+				        { "MOM", 2 },
+				        { "MOM%", 3 },
+				        { "PQ", 4 },
+				        { "QOQ", 5 },
+				        { "QOQ%", 6 },
+				        { "PY", 7 },
+				        { "YOY", 8 },
+				        { "YOY%", 9 }
+				    }
+				)
+
+	annotation PBI_Id = 73a11b2f13b140d48d92a092205bd850
+

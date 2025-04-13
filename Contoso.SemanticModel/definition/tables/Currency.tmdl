@@ -1,0 +1,70 @@
+table Currency
+	lineageTag: 2a3e200f-28ab-4878-b1ab-43e7c5188abc
+
+	measure 'Calculation Group Measure'
+		lineageTag: b34684ac-4bab-476b-b8f2-3968389c5d48
+
+	column CurrencyKey
+		dataType: int64
+		isNullable: false
+		lineageTag: ee764c6a-41db-40c9-b3b4-4344acba94f7
+		summarizeBy: none
+		sourceColumn: CurrencyKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Currency Code'
+		dataType: string
+		lineageTag: 59b51b36-7022-49f6-996c-7675f5a4c0d5
+		summarizeBy: none
+		sourceColumn: Currency Code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Currency
+		dataType: string
+		lineageTag: 355cb301-c2c8-4353-a0f6-f60fcd0aa7f8
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	partition 'DaxBook Currency' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("Demo", "ContosoRetailDW"),
+				    DaxBook_Currency = Source{[Schema="DaxBook",Item="Currency"]}[Data]
+				in
+				    DaxBook_Currency
+
+		annotation IsQueryEditorUsed = False
+
+		annotation QueryEditorSerialization
+
+		annotation TableWidgetSerialization
+
+	annotation _TM_ExtProp_QueryDefinition = SELECT * FROM [Currency]
+
+	annotation _TM_ExtProp_DbTableName = 12
+
+	annotation IsQueryEditorUsed = False
+
+	annotation QueryEditorSerialization
+
+	annotation TableWidgetSerialization
+
+	annotation DataMarketWebBaseUrl
+
+	annotation DataMarketWebQueryUrl
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

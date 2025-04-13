@@ -1,0 +1,224 @@
+table Product
+	lineageTag: 7d6fb1ab-73f8-487f-aab1-5763d45b35cd
+
+	column ProductKey
+		dataType: int64
+		isNullable: false
+		lineageTag: 4012235a-0166-41be-bc76-a408663cb169
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Product Code'
+		dataType: string
+		lineageTag: 1d455c26-1782-414f-80c0-5b799bcdd2ea
+		summarizeBy: none
+		sourceColumn: Product Code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: 64a88060-d3f7-4ef5-a631-7e33f2bcf64d
+		summarizeBy: none
+		sourceColumn: Product Name
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Product Description'
+		dataType: string
+		lineageTag: 327a67ea-c00e-49bd-81cb-3cc960d33409
+		summarizeBy: none
+		sourceColumn: Product Description
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column ProductSubcategoryKey
+		dataType: int64
+		lineageTag: cdbde930-7ac2-4a3e-a9be-74a3919030ef
+		summarizeBy: none
+		sourceColumn: ProductSubcategoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Manufacturer
+		dataType: string
+		lineageTag: c277d3aa-577d-4755-8a29-ef564807a736
+		summarizeBy: none
+		sourceColumn: Manufacturer
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Brand
+		dataType: string
+		lineageTag: 5a835bca-767d-4e28-b678-24572cae5504
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Class
+		dataType: string
+		lineageTag: 606c7359-46d3-4dff-b17e-fc6341634ee1
+		summarizeBy: none
+		sourceColumn: Class
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Style
+		dataType: string
+		lineageTag: 2b3127f6-d894-41bc-b5de-5df17447a8ff
+		summarizeBy: none
+		sourceColumn: Style
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Color
+		dataType: string
+		lineageTag: 56ad0295-be0d-4e3a-831f-fa5a1856dadc
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Size
+		dataType: string
+		lineageTag: 850dd68f-1a7d-4391-8316-705b5f6beca6
+		summarizeBy: none
+		sourceColumn: Size
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Weight
+		dataType: double
+		lineageTag: 8d505234-3bf9-4743-ae55-0a8f647a2a13
+		summarizeBy: none
+		sourceColumn: Weight
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Weight Unit Measure'
+		dataType: string
+		lineageTag: 7fc8e1b0-3aa9-4a5f-92ad-ef2710cb3c59
+		summarizeBy: none
+		sourceColumn: Weight Unit Measure
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Stock Type Code'
+		dataType: string
+		lineageTag: 1dba9f8e-6d04-4172-b892-b4d3e4504381
+		summarizeBy: none
+		sourceColumn: Stock Type Code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Stock Type'
+		dataType: string
+		lineageTag: a3d8321c-0b5c-49ea-97df-f07aed385cfe
+		summarizeBy: none
+		sourceColumn: Stock Type
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Unit Cost'
+		dataType: double
+		lineageTag: d6b9ccf2-fb4e-4d97-8be9-3a8f379a7d3f
+		summarizeBy: none
+		sourceColumn: Unit Cost
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Unit Price'
+		dataType: double
+		lineageTag: 66f63d8f-0a48-4ee9-a844-9f96a695bdb5
+		summarizeBy: none
+		sourceColumn: Unit Price
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Available Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 70363c9a-8f21-401c-aa1c-0c5b1b1cd28c
+		summarizeBy: none
+		sourceColumn: Available Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 479fabc5-a500-4409-8919-8ae33677ee8a
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	partition 'DaxBook Product' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("Demo", "ContosoRetailDW"),
+				    DaxBook_Product = Source{[Schema="DaxBook",Item="Product"]}[Data]
+				in
+				    DaxBook_Product
+
+		annotation IsQueryEditorUsed = False
+
+		annotation QueryEditorSerialization
+
+		annotation TableWidgetSerialization
+
+	annotation _TM_ExtProp_QueryDefinition = SELECT * FROM [Product]
+
+	annotation _TM_ExtProp_DbTableName = 525
+
+	annotation IsQueryEditorUsed = False
+
+	annotation QueryEditorSerialization
+
+	annotation TableWidgetSerialization
+
+	annotation DataMarketWebBaseUrl
+
+	annotation DataMarketWebQueryUrl
+
+	annotation PBI_ResultType = Table
+

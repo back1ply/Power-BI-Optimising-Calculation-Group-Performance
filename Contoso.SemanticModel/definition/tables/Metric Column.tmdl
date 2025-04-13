@@ -1,0 +1,19 @@
+table 'Metric Column'
+	lineageTag: 15a49413-a287-4cb5-8993-bc5e82dfc0f1
+
+	column Value
+		lineageTag: 48809d27-a56b-4821-ae9a-0bfc61e97e34
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	partition 'Metric Column-ddf2855b-f7d4-41a3-8aaf-fc09e2cc5f09' = calculated
+		mode: import
+		source = {"Sales Amount", "Quantity", "Margin", "Margin %" }
+
+	annotation PBI_Id = ef523ddbd1504ce78b48acf1a8117462
+

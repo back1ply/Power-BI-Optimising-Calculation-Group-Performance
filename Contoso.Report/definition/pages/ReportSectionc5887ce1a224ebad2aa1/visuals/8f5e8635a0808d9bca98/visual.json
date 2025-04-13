@@ -1,0 +1,258 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.6.0/schema.json",
+  "name": "8f5e8635a0808d9bca98",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 720,
+    "width": 1280
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Time Intelligence Table"
+                    }
+                  },
+                  "Property": "Time Intelligence Column"
+                }
+              },
+              "queryRef": "Time Intelligence Table.Time Intelligence Column",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Relationships Table"
+                    }
+                  },
+                  "Property": "Relationship"
+                }
+              },
+              "queryRef": "Relationships Table.Relationship",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Metric Column"
+                    }
+                  },
+                  "Property": "Value"
+                }
+              },
+              "queryRef": "Metric Column.Value",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales"
+                    }
+                  },
+                  "Property": "Sales Amount"
+                }
+              },
+              "queryRef": "Sales.Sales Amount"
+            }
+          ]
+        }
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "Relationships Table.Relationship"
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Metric Column.Value"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "objects": {
+      "subTotals": [
+        {
+          "properties": {
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter89ba1e63360e3e06877e",
+        "ordinal": 0,
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Date"
+                  }
+                },
+                "Hierarchy": "Calendar"
+              }
+            },
+            "Level": "Month"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter2152e769de18d3014507",
+        "ordinal": 1,
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Date"
+                  }
+                },
+                "Hierarchy": "Calendar"
+              }
+            },
+            "Level": "Quarter"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter6e1e0691b1ab36acd90d",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Relationships Table"
+              }
+            },
+            "Property": "Relationship"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "Filter4e138dbdb2c333017009",
+        "ordinal": 3,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales"
+              }
+            },
+            "Property": "Sales Amount"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter36403959e23e80610330",
+        "ordinal": 4,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Time Intelligence Table"
+              }
+            },
+            "Property": "Time Intelligence Column"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "Filter921be6665a41b313dea2",
+        "ordinal": 5,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Metric Column"
+              }
+            },
+            "Property": "Value"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "Filteref4ebf2fbe99a1153933",
+        "ordinal": 6,
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Date"
+                  }
+                },
+                "Hierarchy": "Calendar"
+              }
+            },
+            "Level": "Year"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}

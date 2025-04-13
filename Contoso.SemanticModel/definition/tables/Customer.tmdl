@@ -1,0 +1,302 @@
+table Customer
+	lineageTag: 2f5ac231-153a-4aba-bf33-5f4e7bedba8f
+
+	column CustomerKey
+		dataType: int64
+		isNullable: false
+		lineageTag: 955b9a38-c24a-4d14-865d-d9b41b1638d2
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GeographyKey
+		dataType: int64
+		lineageTag: c03e17b0-610d-4034-9df7-4bb07e3307cc
+		summarizeBy: none
+		sourceColumn: GeographyKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Customer Code'
+		dataType: string
+		lineageTag: 717a74ad-3c2a-4921-b942-298020de8050
+		summarizeBy: none
+		sourceColumn: Customer Code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Title
+		dataType: string
+		lineageTag: 8e04a8c9-d9d9-4829-9951-2345830ea860
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Name
+		dataType: string
+		lineageTag: 1392b871-4a15-4da9-9815-5a5e677adf2b
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Birth Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0068926d-afee-48ca-90d1-12ff97e34ca9
+		summarizeBy: none
+		sourceColumn: Birth Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Marital Status'
+		dataType: string
+		lineageTag: df952b3d-5157-4ff6-9631-e39d7199e77c
+		summarizeBy: none
+		sourceColumn: Marital Status
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Gender
+		dataType: string
+		lineageTag: df866d4e-2cf1-4a53-8e7e-b3c699d051e1
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Yearly Income'
+		dataType: decimal
+		lineageTag: 5afa17a7-5231-4edb-a6b4-1898b36eff04
+		summarizeBy: none
+		sourceColumn: Yearly Income
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Children'
+		dataType: int64
+		lineageTag: 55481f12-da8a-4c15-b03c-bb1b5c094036
+		summarizeBy: none
+		sourceColumn: Total Children
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Children At Home'
+		dataType: int64
+		lineageTag: 4407019b-a49e-41ad-8b66-c8ebd0a1ea83
+		summarizeBy: none
+		sourceColumn: Children At Home
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Education
+		dataType: string
+		lineageTag: 7352d783-333a-41f4-9238-b8f3168bbf32
+		summarizeBy: none
+		sourceColumn: Education
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Occupation
+		dataType: string
+		lineageTag: 5061cb12-9a67-4b38-84a7-8132c7e76dfd
+		summarizeBy: none
+		sourceColumn: Occupation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'House Ownership'
+		dataType: string
+		lineageTag: ca21373c-e15d-41f2-9cc2-c7d936ef745f
+		summarizeBy: none
+		sourceColumn: House Ownership
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Cars Owned'
+		dataType: int64
+		lineageTag: db1bddf7-9a8f-44d0-bfff-c0765665cf73
+		summarizeBy: none
+		sourceColumn: Cars Owned
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Continent
+		dataType: string
+		lineageTag: 6ea69523-418c-41c8-beed-8715670f88a8
+		summarizeBy: none
+		sourceColumn: Continent
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column City
+		dataType: string
+		lineageTag: 24d578ab-719d-4ad8-bd01-a0b1902c43a9
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column State
+		dataType: string
+		lineageTag: 21f3ac58-020b-4652-8e77-fd4c14887aa4
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Country
+		dataType: string
+		lineageTag: 8557725a-4f89-4102-89b5-1000cc42f99c
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Address Line 1'
+		dataType: string
+		lineageTag: 80f000b7-7388-4f74-8434-31ddd7e8aeb2
+		summarizeBy: none
+		sourceColumn: Address Line 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Address Line 2'
+		dataType: string
+		lineageTag: d0f54db7-d32f-4de7-a501-edbb2d4bbd71
+		summarizeBy: none
+		sourceColumn: Address Line 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Phone
+		dataType: string
+		lineageTag: 29f68e52-bc6a-440c-9e1c-712bfc4e98ec
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Date First Purchase'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ac6657e0-0c88-4880-9d62-bedf0954b11e
+		summarizeBy: none
+		sourceColumn: Date First Purchase
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Customer Type'
+		dataType: string
+		lineageTag: 37dc1959-f956-4840-a836-c36552e834b8
+		summarizeBy: none
+		sourceColumn: Customer Type
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Company Name'
+		dataType: string
+		lineageTag: 1401ec9a-279a-4aee-bebf-a36eb02ca7fc
+		summarizeBy: none
+		sourceColumn: Company Name
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Cashback %'
+		dataType: double
+		lineageTag: 05935a9a-dc6e-473f-a94b-482dfa0121d7
+		summarizeBy: none
+		sourceColumn: Cashback %
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'DaxBook Customer' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("Demo", "ContosoRetailDW"),
+				    DaxBook_Customer = Source{[Schema="DaxBook",Item="Customer"]}[Data],
+				    #"Inserted Division" = Table.AddColumn(DaxBook_Customer, "Division", each [Children At Home] / 200, type number),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Inserted Division",{{"Division", Percentage.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Division", "Cashback %"}})
+				in
+				    #"Renamed Columns"
+
+		annotation IsQueryEditorUsed = False
+
+		annotation QueryEditorSerialization
+
+		annotation TableWidgetSerialization
+
+	annotation _TM_ExtProp_QueryDefinition = SELECT * FROM [Customer]
+
+	annotation _TM_ExtProp_DbTableName = 63
+
+	annotation IsQueryEditorUsed = False
+
+	annotation QueryEditorSerialization
+
+	annotation TableWidgetSerialization
+
+	annotation DataMarketWebBaseUrl
+
+	annotation DataMarketWebQueryUrl
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

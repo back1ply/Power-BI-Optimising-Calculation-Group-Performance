@@ -1,0 +1,34 @@
+table Metrics
+	lineageTag: aab1ccd3-92ce-4942-813c-7f8dbda9ad37
+
+	calculationGroup
+		precedence: 3
+
+		calculationItem 'Sales Amount' = [Sales Amount]
+
+		calculationItem Margin = [Margin]
+
+		calculationItem 'Margin %' = [Margin %]
+
+			formatStringDefinition = "0.0%;-0.0%;0.0%"
+
+		calculationItem Quantity = [Sum of Quantity]
+
+	column Metric
+		dataType: string
+		lineageTag: 7a763a6e-897b-4dd2-9885-877a15a4d3d6
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordinal
+		dataType: int64
+		isHidden
+		lineageTag: d3da890e-228d-4811-9335-5fc37a24d1c8
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+

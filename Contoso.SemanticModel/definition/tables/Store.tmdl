@@ -1,0 +1,252 @@
+table Store
+	lineageTag: c77f804a-ac9b-4a28-854b-ebd71b085fdf
+
+	column StoreKey
+		dataType: int64
+		isNullable: false
+		lineageTag: c5b7e1ec-4254-417b-ba6b-05615ef6a884
+		summarizeBy: none
+		sourceColumn: StoreKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GeographyKey
+		dataType: int64
+		lineageTag: d9b175a9-7bde-490d-a22a-7ba979bf49d8
+		summarizeBy: none
+		sourceColumn: GeographyKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Store Manager'
+		dataType: int64
+		lineageTag: 5d542468-ade9-4049-9dac-d6955d45d589
+		summarizeBy: none
+		sourceColumn: Store Manager
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Store Type'
+		dataType: string
+		lineageTag: 640516f4-512c-422a-a0c9-96e673fa7549
+		summarizeBy: none
+		sourceColumn: Store Type
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Store Name'
+		dataType: string
+		lineageTag: 38e4526b-bd1c-4038-9b66-ac0b5151fbb8
+		summarizeBy: none
+		sourceColumn: Store Name
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Status
+		dataType: string
+		lineageTag: 22543ec9-ff0b-49c8-8cd6-0788c154241e
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Open Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7ca0508c-578d-4e25-a437-40d16bb11b1b
+		summarizeBy: none
+		sourceColumn: Open Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Close Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 972dceb6-1728-417b-a30b-57ddf4a19449
+		summarizeBy: none
+		sourceColumn: Close Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Zip Code'
+		dataType: string
+		lineageTag: 7be303dd-f8eb-4861-8ef7-97aba2ef0708
+		summarizeBy: none
+		sourceColumn: Zip Code
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Zip Code Extension'
+		dataType: string
+		lineageTag: 8aa56948-8d01-4fa0-9c5a-07f0d0108e7b
+		summarizeBy: none
+		sourceColumn: Zip Code Extension
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Store Phone'
+		dataType: string
+		lineageTag: 78420055-d8a7-4de4-89b8-c44c706df6ff
+		summarizeBy: none
+		sourceColumn: Store Phone
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column StoreFax
+		dataType: string
+		lineageTag: 8b5faf08-c239-4ffa-b5d1-f8edcc278937
+		summarizeBy: none
+		sourceColumn: StoreFax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Continent
+		dataType: string
+		lineageTag: add706f4-f86b-40e0-9cc6-f0aaeda97918
+		summarizeBy: none
+		sourceColumn: Continent
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column City
+		dataType: string
+		lineageTag: 71f374c2-816a-4234-a0fd-3857e0f63c8e
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column State
+		dataType: string
+		lineageTag: e2bc00fc-38f0-4b86-b92d-e64f81c12135
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Country
+		dataType: string
+		lineageTag: 8f740fe7-90b1-4cb8-ad60-4f77dec3a199
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Address Line 1'
+		dataType: string
+		lineageTag: 10b9498d-e1e3-48d3-a856-871693b06a2e
+		summarizeBy: none
+		sourceColumn: Address Line 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Address Line 2'
+		dataType: string
+		lineageTag: 36a5a99f-4808-4c92-b566-66de63ed24f6
+		summarizeBy: none
+		sourceColumn: Address Line 2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 'Close Reason'
+		dataType: string
+		lineageTag: efb740c4-5db5-4846-9370-a49cea1e1097
+		summarizeBy: none
+		sourceColumn: Close Reason
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Employees
+		dataType: int64
+		lineageTag: 5aeff2f0-6261-479e-b444-a9087ad500b8
+		summarizeBy: none
+		sourceColumn: Employees
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Selling Area'
+		dataType: double
+		lineageTag: 6a10775d-bf24-4c17-abd4-1304b20e27d6
+		summarizeBy: none
+		sourceColumn: Selling Area
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Last Remodel Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 70674d9b-28e3-476c-868a-88d65ca5eb18
+		summarizeBy: none
+		sourceColumn: Last Remodel Date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DaxBook Store' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("Demo", "ContosoRetailDW"),
+				    DaxBook_Store = Source{[Schema="DaxBook",Item="Store"]}[Data]
+				in
+				    DaxBook_Store
+
+		annotation IsQueryEditorUsed = False
+
+		annotation QueryEditorSerialization
+
+		annotation TableWidgetSerialization
+
+	annotation _TM_ExtProp_QueryDefinition = SELECT * FROM [Store]
+
+	annotation _TM_ExtProp_DbTableName = 1084
+
+	annotation IsQueryEditorUsed = False
+
+	annotation QueryEditorSerialization
+
+	annotation TableWidgetSerialization
+
+	annotation DataMarketWebBaseUrl
+
+	annotation DataMarketWebQueryUrl
+
+	annotation PBI_ResultType = Table
+

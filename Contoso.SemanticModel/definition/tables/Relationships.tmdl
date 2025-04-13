@@ -1,0 +1,34 @@
+table Relationships
+	lineageTag: 8eb0a8bc-d540-4b56-86f6-38d90a098717
+
+	calculationGroup
+		precedence: 1
+
+		calculationItem 'By Order Date' = SELECTEDMEASURE()
+
+		calculationItem 'By Delivery Date' =
+				CALCULATE(
+				    SELECTEDMEASURE( ),
+				    USERELATIONSHIP( 'Date'[Date], 'Sales'[Delivery Date] )
+				)
+
+		calculationItem 'By Due Date' = CALCULATE( SELECTEDMEASURE(), USERELATIONSHIP( 'Date'[Date], 'Sales'[Due Date] ) )
+
+	column Relationship
+		dataType: string
+		lineageTag: ead57f02-3ec3-4778-81ff-7e77764aa04e
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordinal
+		dataType: int64
+		isHidden
+		lineageTag: 3801ba70-a0ba-4461-88bb-e46f064e16e2
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+

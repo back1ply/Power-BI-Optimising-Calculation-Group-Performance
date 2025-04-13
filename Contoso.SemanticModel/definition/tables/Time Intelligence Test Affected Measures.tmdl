@@ -1,0 +1,19 @@
+/// Measures affected by Time Intelligence Test calculation group.
+table 'Time Intelligence Test Affected Measures'
+	isHidden
+	lineageTag: 4eceb679-9cc8-40d4-86e3-75197660edfe
+
+	column Measure
+		lineageTag: cc691a1d-8ad0-4b2c-a204-542463d65777
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Measure]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Time Intelligence Test Affected Measures' = calculated
+		mode: import
+		source = SELECTCOLUMNS({"Calculation Group Measure"},"Measure",[Value])
+
+	annotation @AgulloBernat = Time Intel Affected Measures Table
+

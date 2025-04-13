@@ -1,0 +1,52 @@
+table 'Metrics Optimised'
+	lineageTag: 26ed804c-ced2-4bb2-a9d6-eebbb2b823c5
+
+	calculationGroup
+		precedence: 10
+
+		calculationItem Metric =
+				VAR SalesAmount =
+				    SUMX( 'Sales', 'Sales'[Quantity] * 'Sales'[Net Price] )
+				VAR Quantity = SUM( 'Sales'[Quantity] )
+				VAR TotalCost =
+				    SUMX( 'Sales', 'Sales'[Quantity] * 'Sales'[Unit Cost] )
+				VAR Margin = SalesAmount - TotalCost
+				VAR MarginPct = DIVIDE( Margin, SalesAmount )
+				RETURN
+				    SWITCH(
+				        SELECTEDVALUE( 'Metric Column'[Value] ),
+				        "Sales Amount", SalesAmount,
+				        "Quantity", Quantity,
+				        "Margin", Margin,
+				        "Margin %", MarginPct,
+				        SELECTEDMEASURE( )
+				    )
+
+			formatStringDefinition =
+					SWITCH(
+					    SELECTEDVALUE( 'Metric Column'[Value] ),
+					    "Sales Amount", "\$#,0;(\$#,0);\$#,0",
+					    "Quantity", "0.0",
+					    "Margin", "\$#,0;(\$#,0);\$#,0",
+					    "Margin %", "0.0%;-0.0%;0.0%",
+					    SELECTEDMEASUREFORMATSTRING( )
+					)
+
+	column Name
+		dataType: string
+		lineageTag: 007e7045-c6dc-41f4-857d-42ac0a37f0ca
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordinal
+		dataType: int64
+		isHidden
+		lineageTag: cbaa0ee0-f5c4-4771-9322-ef85ea254377
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
